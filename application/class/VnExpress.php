@@ -3,7 +3,7 @@ include ('BaseCrawler.php');
 class VnExpress extends BaseCrawler 
 {
     public $__search1 = '/class="title.{1,15}detail/';
-    public $__search2 = '/(style="text-align:right;"|class="author_mail")/';
+    public $__search2 = '/(class="Normal"|style="text-align:right;"|class="author_mail")/';
     public $__search3 = '/>/';
     // public $__search4 = '<article class="content_detail fck_detail width_common block_ads_connect">';
     
@@ -11,25 +11,7 @@ class VnExpress extends BaseCrawler
         $b = parent::takeCodeWebsite();
         // xóa đoạn code bên trên tiêu đề
         $b = parent::deleteBefore($this->__search1, $b);
-        // $b = parent::deleteBefore('>', $b);
-        // xóa đoạn code bên dưới nội dung
-        // if ($b == 'Error') {
-        //     echo '<p class="error_link">Add data false. Url phải là link 1 bài báo trong 2 trang yêu cầu </p>';
-        //     echo '<div class="back" style="text-align:center">
-        //               <a href="index.php">Quay lại trang chủ</a>
-        //           </div>';
-        //     die();
-        //     // header('location:Action/Error.php');
-        // }
         $b = parent::deleteAfter($this->__search2, $b);
-        // if ($b == 'Error') {
-        //     echo '<p class="error_link">Add data false. Url phải là link 1 bài báo trong 2 trang yêu cầu </p>';
-        //     echo '<div class="back" style="text-align:center">
-        //               <a href="index.php">Quay lại trang chủ</a>
-        //           </div>';
-        //     die();
-        //     // header('location:Action/Error.php');
-        // }
         // echo $b;
         return $b;
     }
@@ -40,7 +22,6 @@ class VnExpress extends BaseCrawler
         return strip_tags($f);
         // echo $f;
     }
-
     public function takeContent()
     {   
         // $g = explode($this->__search4,$this->__deleteGarbage());

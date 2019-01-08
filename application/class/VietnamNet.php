@@ -3,7 +3,7 @@ include ('BaseCrawler.php');
 class VietnamNet extends BaseCrawler
 {
     private $__search1 = '/class="title f-22 c-3e">/';
-    private $__search2 = '/<div class="inner-article"/';
+    private $__search2 = '/class="m-t-10 ArticleDateTime clearfix"/';
     private $__search3 = '/<\/h1>/';
 
     private function __deleteGarbage() {
@@ -13,13 +13,13 @@ class VietnamNet extends BaseCrawler
         $b = parent::deleteAfter($this->__search2, $b);
         return $b;
     }
-
+    // take title
     public function takeTitle()
     {
         $f = parent::deleteAfter($this->__search3, $this->__deleteGarbage());
         return strip_tags($f);
     }
-
+    // take content
     public function takeContent()
     {   
         $gString = str_replace( $this->takeTitle(),' ', $this->__deleteGarbage());

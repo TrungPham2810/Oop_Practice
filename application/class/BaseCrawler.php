@@ -3,7 +3,6 @@ class BaseCrawler
 {
     protected function takeCodeWebsite()
     {   
-        
         $ch = curl_init();
         // Config  for CURL
         curl_setopt($ch, CURLOPT_URL, $this->url);
@@ -27,18 +26,17 @@ class BaseCrawler
             }
         }
 
-        protected function deleteBefore($search, $content)
-        {
-            
-            $result = preg_split($search, $content);
-            if (isset($result[1])) {
-                return $result[1];
-            } else {
-                echo ERROR;
-                die();
-            }
-            
+    protected function deleteBefore($search, $content)
+    {
+        $result = preg_split($search, $content);
+        if (isset($result[1])) {
+            return $result[1];
+        } else {
+            echo ERROR;
+            die();
         }
+        
+    }
 }
 
 // $a = new BaseCrawler();
