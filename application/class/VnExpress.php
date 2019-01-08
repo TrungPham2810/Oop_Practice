@@ -2,10 +2,10 @@
 include ('BaseCrawler.php');
 class VnExpress extends BaseCrawler
 {
-    private $__search1 = 'class="title_news_detail mb10"';
-    private $__search2 = 'style="text-align:right;"';
-    private $__search3 = '>';
-    private $__search4 = '<article class="content_detail fck_detail width_common block_ads_connect">';
+    public $__search1 = '/class="title.{1,15}detail/';
+    public $__search2 = 'style="text-align:right;"';
+    public $__search3 = '/>/';
+    // public $__search4 = '<article class="content_detail fck_detail width_common block_ads_connect">';
     
     private function __deleteGarbage() {
         $b = parent::takeCodeWebsite();
@@ -30,6 +30,7 @@ class VnExpress extends BaseCrawler
         //     die();
         //     // header('location:Action/Error.php');
         // }
+        // echo $b;
         return $b;
     }
 
