@@ -1,7 +1,6 @@
 <?php 
 class Db 
 {
-    // public $url = 'ok';
     // Biến lưu trữ kết nối
     private $__conn;
     // Hàm Kết Nối

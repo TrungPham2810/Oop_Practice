@@ -35,7 +35,6 @@ class BaseCrawler
             echo ERROR;
             die();
         }
-        
     }
 }
 
