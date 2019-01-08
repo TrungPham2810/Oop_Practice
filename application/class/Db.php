@@ -40,22 +40,20 @@ class Db
                 'Content' => $content,
             );
             $field_list = '';
-        // Lưu trữ danh sách giá trị tương ứng với field
-        $value_list = '';
-        // Lặp qua data
-        foreach ($data as $key => $value){
-            $field_list .= ",$key";
-            $value_list .= ",'".addslashes($value)."'";
-        }
-        // var_dump($value_list.'thấy chưa');
-        // Vì sau vòng lặp các biến $field_list và $value_list sẽ thừa một dấu , nên ta sẽ dùng hàm trim để xóa đi
-        $sql = 'INSERT INTO '.$table. '('.trim($field_list, ',').') VALUES (N'.trim($value_list, ',').')';
- 
-         mysqli_query($this->__conn, $sql);
-            // $d = new Db();
-            // $d -> insert($tableName, $data);
-            return '<span>Success</span>';
+            // Lưu trữ danh sách giá trị tương ứng với field
+            $value_list = '';
+            // Lặp qua data
+            foreach ($data as $key => $value){
+                $field_list .= ",$key";
+                $value_list .= ",'".addslashes($value)."'";
+            }
+            // Vì sau vòng lặp các biến $field_list và $value_list sẽ thừa một dấu , nên ta sẽ dùng hàm trim để xóa đi
+            $sql = 'INSERT INTO '.$table. '('.trim($field_list, ',').') VALUES (N'.trim($value_list, ',').')';
+    
+            mysqli_query($this->__conn, $sql);
+                return '<span>Success</span>';
         } else {
+            // var_dump($test->getRow($sql1));
             return '<span>Dữ liệu đã tồn tại, mời bạn nhập dữ liệu mới</span>';
         }       
         
@@ -64,8 +62,6 @@ class Db
     // Hàm Update edit
     public function update($table, $data, $where)
     {
-        // Kết nối
-        // $this->connect();
         $sql = '';
         // Lặp qua data
         foreach ($data as $key => $value){
@@ -80,10 +76,6 @@ class Db
  
     // Hàm delete
     public function remove($table, $where){
-        // Kết nối
-        // $this->connect();
-         
-        // Delete
         $sql = "DELETE FROM $table WHERE $where";
         return mysqli_query($this->__conn, $sql);
     }
@@ -91,8 +83,6 @@ class Db
     // Hàm lấy danh sách
     public function getList($sql)
     {
-        // Kết nối
-        // $this->connect();
         $result = mysqli_query($this->__conn, $sql);
         if (!$result){
             die ('Câu truy vấn bị sai');
@@ -102,7 +92,6 @@ class Db
         while ($row = mysqli_fetch_assoc($result)){
             $return[] = $row;
         }
-        
         // Xóa kết quả khỏi bộ nhớ
         mysqli_free_result($result);
         return $return;
@@ -110,7 +99,6 @@ class Db
 
     // ham đếm để trong trg hợp xét xem dữ liệu đã tồn tại hay chưa nếu tồn tại >0 chưa thì < 0
     public function numRow($sql){
-        // $this->connect();
         $link= new mysqli('localhost', 'root', '', 'ControlData') or die ('Lỗi kết nối');
         $result=mysqli_query($link,$sql);
         $num_row=mysqli_num_rows($result);
@@ -120,11 +108,9 @@ class Db
     // Hàm lấy 1 record dùng trong trường hợp lấy chi tiết tin
     public function getRow($sql)
     {
-        // Kết nối
-        // $this->connect();
         $result = mysqli_query($this->__conn, $sql);
         if (!$result){
-            return 'ERROR';
+            return false;
         }
         $row = mysqli_fetch_assoc($result);
         // Xóa kết quả khỏi bộ nhớ
@@ -132,7 +118,6 @@ class Db
         if ($row){
             return $row;
         }
-        return false;
     }
 }
 

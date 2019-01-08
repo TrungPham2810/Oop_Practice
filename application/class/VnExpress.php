@@ -3,7 +3,7 @@ include ('BaseCrawler.php');
 class VnExpress extends BaseCrawler 
 {
     public $__search1 = '/class="title.{1,15}detail/';
-    public $__search2 = '/(class="Normal"|style="text-align:right;"|class="author_mail")/';
+    public $__search2 = '/(style="text-align:right;"|class="author_mail"|align="right")/';//|class="Normal"
     public $__search3 = '/>/';
     // public $__search4 = '<article class="content_detail fck_detail width_common block_ads_connect">';
     
