@@ -29,7 +29,8 @@ class BaseCrawler
 
         protected function deleteBefore($search, $content)
         {
-            $result = explode($search, $content);
+            
+            $result = preg_split($search, $content);
             if (isset($result[1])) {
                 return $result[1];
             } else {
