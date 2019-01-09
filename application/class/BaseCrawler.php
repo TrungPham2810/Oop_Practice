@@ -21,8 +21,9 @@ class BaseCrawler
             if (isset($result[0])) {
                 return $result[0];
             } else {
-                echo ERROR;
-                die();
+                $_SESSION['linkerror']= $_POST['link'];
+                $_SESSION['error']= ERROR;
+                header('location:index.php');
             }
         }
 
@@ -32,18 +33,11 @@ class BaseCrawler
         if (isset($result[1])) {
             return $result[1];
         } else {
-            echo ERROR;
-            die();
+            $_SESSION['linkerror']= $_POST['link'];
+            $_SESSION['error']= ERROR;
+            header('location:index.php');
         }
     }
 }
 
-// $a = new BaseCrawler();
-// $a ->url = "https://vnexpress.net/tam-su/trong-con-say-toi-da-di-qua-gioi-han-voi-hai-nguoi-dan-ong-3863180.html";
-// $b = $a->takeCodeWebsite();
-// // xóa đoạn code bên trên tiêu đề
-// $b = $a->deleteBefore('class="title_news_detail mb10">', $b);
-// // xóa đoạn code bên dưới nội dung
-// $b = $a->deleteAfter('style="text-align:right;"', $b);
-// var_dump($b);
 ?>
