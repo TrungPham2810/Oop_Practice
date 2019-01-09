@@ -5,13 +5,25 @@
 }
 body {
     font-family: arial;
-    width:900px;
+    width:60%;
     margin:auto;
+}
+@media screen and (max-width:768px) {
+    body {
+        width:80%;
+    }
+}
+@media screen and (max-width:576px) {
+    input[type="text"] {
+        margin-bottom: 10px;
+        width:100% !important;
+    }
+    body {
+        font-size:12px;
+    }
 }
 .link {
     border-collapse:collapse;
-     width:900px;
-     margin:auto;
 }
 .link tr td {
     padding:5px 20px;
@@ -31,23 +43,27 @@ input[type="text"] {
     border: 1px solid #64a7bd;
     padding: 5px;
     border-radius: 7px;
+    box-sizing: border-box;
     width: 390px;
 }
 input[type="submit"] {
-    border: 1px solid red;
+    border: 1px solid #ff006c;
     padding: 5px;
     border-radius: 6px;
-    background: #dc1b1b;
+    background: #ff006c;
     color: white;
     cursor: pointer;
+}
+.text_color {
+    color:#005ddc;
 }
 .input_form {
     margin-top:20px;
     text-align:center;
+    width: 100%;
 }
 .show_data {
-    width:900px;
-    margin:auto;
+    width:100%;
    margin-top:20px;
 }
 .show_data tr td:nth-of-type(1) {
@@ -69,7 +85,7 @@ a {
     text-decoration:none;
 }
 a:visited {
-    color: green;
+    color: #4007f5;
     }
 span {
     color:red;
@@ -80,7 +96,7 @@ span {
 }
 
 .box {
-    width:700px;
+    width:100%;
     margin:auto;
 }
 .news {
@@ -89,11 +105,12 @@ span {
 h1 {
     text-align:center;
     margin: 10px 0;
+    font-size: 1.9em;
+    color: #2d3138;
 }
 .back {
     display: flex;
-    margin-right: 20px;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 p {
     text-align: justify;
@@ -101,11 +118,13 @@ p {
 }
 .back a {
     text-decoration: none;
-    background: green;
     padding: 0px 9px;
     border-radius: 10px;
-    color: yellow;
+    color: #005ddc;
     margin: 20px 0 40px 0;
+    border: 1px solid;
+    font-weight: 600;
+    box-sizing: content-box;
 }
 .error_link {
     color:red;
@@ -115,8 +134,20 @@ p {
     font-weight:bold;
     font-size: 17px;
 }
+.text_content {
+    text-indent: 20px;
+    color:#363636;
+
+}
+span.arrow {
+    color: #005ddc;
+    display: inline;
+    font-size: 1.5em;
+    vertical-align: middle;
+    font-weight: bold;
+}
 .flash {
-    animation: flash 0.5s forwards;
+    animation: flash 0.3s forwards;
     /* animation-iteration-count:infinite; */
 }
 @-webkit-keyframes flash {

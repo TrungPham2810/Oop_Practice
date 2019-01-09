@@ -27,7 +27,7 @@
     <input type="text"  name='link' value="<?php if (isset($_SESSION['linkerror'])) {
          echo trim($_SESSION['linkerror']);
         unset($_SESSION['linkerror']);
-    }?>" placeholder='Put Url here' >
+    }?>" placeholder='Put url here' >
     <input type="submit" name='submit' value='Add data'>
     <?php
         if(!isset($_POST['submit'])) {

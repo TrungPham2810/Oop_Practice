@@ -53,7 +53,7 @@ class Db
             // Vì sau vòng lặp các biến $field_list và $value_list sẽ thừa một dấu , nên ta sẽ dùng hàm trim để xóa đi
             $sql = 'INSERT INTO '.$table. '('.trim($field_list, ',').') VALUES (N'.trim($value_list, ',').')';
             mysqli_query($this->__conn, $sql);
-            $_SESSION['success']= '<span class="flash">Add data Success</span>';
+            $_SESSION['success']= '<span class="flash text_color">Add data Success</span>';
         } else {
             // var_dump($test->getRow($sql1));
             $_SESSION['linkerror']= $_POST['link'];

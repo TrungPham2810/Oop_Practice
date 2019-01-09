@@ -7,7 +7,7 @@ if (isset($_GET)) {
     $id = $_GET['id'];
     $a = new Db();
     $a -> remove($table, "Id = $id");
-    $_SESSION['delete']= '<span class="flash">Delete Success</span>';
+    $_SESSION['delete']= '<span class="flash text_color">Delete Success</span>';
     header('location:../../public/index.php');
 }
 ?> 

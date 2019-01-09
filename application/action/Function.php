@@ -2,7 +2,7 @@
     function show_data($tableName, $tableTitle)
     {
         echo  "<table class=\"show_data\" border='1' style=\"border-collapse:collapse\">
-        <tr style=\"text-align:center;font-size:25px;font-weight:bold;\">
+        <tr style=\"text-align:center;font-size:1.5em;font-weight:bold;\">
             <td colspan='4'>".$tableTitle." </td>
         </tr>
         <tr style=\"text-align:center;\">

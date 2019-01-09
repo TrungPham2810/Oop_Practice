@@ -9,14 +9,14 @@
                 // show data
                 echo '<div class="news">';
                 echo "<h1>".$b['Title']."</h1>";
-                echo "<p style='text-indent: 20px;'>".$b['Content']."</p>";
+                echo "<p class=\"text_content\">".$b['Content']."</p>";
                 echo '</div>';
             }
         ?> 
         <div class="back" style="text-align:center">
             <a href="index.php">
-                <h1 style="display:inline;vertical-align:middle;">&lsaquo;</h1>
-                Home Page
+                 <span class="arrow">&lsaquo;</span>
+                Back to previous page
             </a>
         </div>
     </div>
