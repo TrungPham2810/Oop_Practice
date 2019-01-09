@@ -15,7 +15,7 @@
         ?> 
         <div class="back" style="text-align:center">
             <a href="index.php">
-                <h1 style="display:inline;vertical-align: middle;">&lsaquo;</h1>
+                <h1 style="display:inline;vertical-align:middle;">&lsaquo;</h1>
                 Home Page
             </a>
         </div>
