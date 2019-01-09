@@ -26,14 +26,15 @@ class Db
     // Hàm Insert add
     public function insert($table, $a, $className) //data sẽ ở dạng array
     {
-        $c = new $className();
-        $c -> url = $a;
+        $c = new BaseArticle();
+        $d = $c->makePhpClass($className);
+        $d -> url = $a;
         // gán giá trị cho các biến title và content
-        if ($c->__deleteGarbage() =='') {
+        if ($d->deleteGarbage() =='') {
             return ERROR;
         } else {
-            $title = $c -> takeTitle();
-        $content = $c -> takeContent();
+            $title = $d -> takeTitle();
+        $content = $d -> takeContent();
         // kiểm tra xem dữ liệu này đã được lưu chưa
         $sql1 = "SELECT Id FROM $table WHERE Title = '$title' ";
         $test = new Db();
