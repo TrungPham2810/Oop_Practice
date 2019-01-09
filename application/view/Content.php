@@ -16,7 +16,7 @@
         <div class="back" style="text-align:center">
             <a href="index.php">
                  <span class="arrow">&lsaquo;</span>
-                Back to previous page
+                 <p style="display:inline">Back to previous page</p>
             </a>
         </div>
     </div>

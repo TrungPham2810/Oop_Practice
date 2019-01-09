@@ -1,12 +1,12 @@
 <?php
-include ('BaseCrawler.php');
+// include ('BaseCrawler.php');
 class VietnamNet extends BaseCrawler
 {
     private $__search1 = '/class="title f-22 c-3e">/';
     private $__search2 = '/class="m-t-10 ArticleDateTime clearfix"/';
     private $__search3 = '/<\/h1>/';
 
-    public function __deleteGarbage() {
+    public function deleteGarbage() {
         $b = parent::takeCodeWebsite();
         // xóa đoạn code bên trên tiêu đề
         $b = parent::deleteBefore($this->__search1, $b);
@@ -16,13 +16,13 @@ class VietnamNet extends BaseCrawler
     // take title
     public function takeTitle()
     {
-        $f = parent::deleteAfter($this->__search3, $this->__deleteGarbage());
+        $f = parent::deleteAfter($this->__search3, $this->deleteGarbage());
         return strip_tags($f);
     }
     // take content
     public function takeContent()
     {   
-        $gString = str_replace( $this->takeTitle(),' ', $this->__deleteGarbage());
+        $gString = str_replace( $this->takeTitle(),' ', $this->deleteGarbage());
         $gString = parent::deleteBefore('/class="ArticleContent">/', $gString);
         return strip_tags($gString);
     }

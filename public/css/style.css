@@ -13,7 +13,7 @@ body {
         width:60%;
     }
 }
-@media screen and (max-width:576px) {
+@media screen and (min-width:576px) {
     input[type="text"] {
         margin-bottom: 10px;
         width:385px !important;
@@ -133,6 +133,10 @@ p {
     color: white;
     background: #005ddc;
 }
+.back a:hover span {
+    color: white;
+    background: #005ddc;
+}
 .error_link {
     color:red;
     text-align: center;
@@ -148,16 +152,18 @@ p {
 }
 span.arrow {
     color: #005ddc;
+    background: white;
     display: inline;
     font-size: 25px;
     vertical-align: middle;
     font-weight: bold;
+    transition:0.2s;
 }
 .flash {
     animation: flash 0.3s forwards;
     /* animation-iteration-count:infinite; */
 }
-@-webkit-keyframes flash {
+@keyframes flash {
     from {opacity:0}
     to {opacity:1}
 }
