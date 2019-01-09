@@ -8,11 +8,22 @@ body {
     width:900px;
     margin:auto;
 }
+.link {
+    border-collapse:collapse;
+     width:900px;
+     margin:auto;
+}
 .link tr td {
     padding:5px 20px;
 }
 td {
     padding:5px 10px;
+}
+.title_table_link {
+    text-align:center;
+    font-weight:bold;
+    font-size:20px; 
+    color: blue;
 }
 input[type="text"] {
     background: lightblue;
@@ -29,6 +40,10 @@ input[type="submit"] {
     background: #dc1b1b;
     color: white;
     cursor: pointer;
+}
+.input_form {
+    margin-top:20px;
+    text-align:center;
 }
 .show_data {
     width:900px;
@@ -77,6 +92,7 @@ h1 {
 }
 .back {
     display: flex;
+    margin-right: 20px;
     justify-content: flex-end;
 }
 p {
@@ -84,12 +100,12 @@ p {
     line-height: 25px;
 }
 .back a {
-    text-decoration:none;
+    text-decoration: none;
     background: green;
-    padding:5px;
-    border-radius:10px;
-    color:yellow;
-    margin:20px 0 40px 0;
+    padding: 0px 9px;
+    border-radius: 10px;
+    color: yellow;
+    margin: 20px 0 40px 0;
 }
 .error_link {
     color:red;
@@ -99,3 +115,11 @@ p {
     font-weight:bold;
     font-size: 17px;
 }
+/* .flash {
+    animation: flash 0.1s alternate ;
+    animation-iteration-count:infinite;
+}
+@-webkit-keyframes flash {
+    from {opacity:0}
+    to {opacity:1}
+} */
