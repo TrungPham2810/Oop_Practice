@@ -5,21 +5,18 @@
 }
 body {
     font-family: arial;
-    width:60%;
+    width:80%;
     margin:auto;
 }
-@media screen and (max-width:768px) {
+@media screen and (min-width:768px) {
     body {
-        width:80%;
+        width:60%;
     }
 }
 @media screen and (max-width:576px) {
     input[type="text"] {
         margin-bottom: 10px;
-        width:100% !important;
-    }
-    body {
-        font-size:12px;
+        width:385px !important;
     }
 }
 .link {
@@ -42,17 +39,22 @@ input[type="text"] {
     outline: none;
     border: 1px solid #64a7bd;
     padding: 5px;
+    margin-bottom: 10px;
+    width:100% ;
     border-radius: 7px;
     box-sizing: border-box;
-    width: 390px;
+    font-size: 0.9em;
 }
 input[type="submit"] {
     border: 1px solid #ff006c;
-    padding: 5px;
+    padding: 5px 8px;
     border-radius: 6px;
-    background: #ff006c;
-    color: white;
+    background: #fff;
+    color: #ff006c;
+    font-weight: bold;
     cursor: pointer;
+    font-size: 0.9em;
+    transition: 0.1s;
 }
 .text_color {
     color:#005ddc;
@@ -105,7 +107,7 @@ span {
 h1 {
     text-align:center;
     margin: 10px 0;
-    font-size: 1.9em;
+    font-size: 30px;
     color: #2d3138;
 }
 .back {
@@ -125,6 +127,11 @@ p {
     border: 1px solid;
     font-weight: 600;
     box-sizing: content-box;
+    transition:0.2s;
+}
+.back a:hover {
+    color: white;
+    background: #005ddc;
 }
 .error_link {
     color:red;
@@ -142,7 +149,7 @@ p {
 span.arrow {
     color: #005ddc;
     display: inline;
-    font-size: 1.5em;
+    font-size: 25px;
     vertical-align: middle;
     font-weight: bold;
 }
@@ -153,4 +160,9 @@ span.arrow {
 @-webkit-keyframes flash {
     from {opacity:0}
     to {opacity:1}
+}
+
+input[type="submit"]:hover {
+    color: white;
+    background: #ff006c;
 }
