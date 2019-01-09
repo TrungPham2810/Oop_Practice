@@ -6,7 +6,7 @@ class VietnamNet extends BaseCrawler
     private $__search2 = '/class="m-t-10 ArticleDateTime clearfix"/';
     private $__search3 = '/<\/h1>/';
 
-    private function __deleteGarbage() {
+    public function __deleteGarbage() {
         $b = parent::takeCodeWebsite();
         // xóa đoạn code bên trên tiêu đề
         $b = parent::deleteBefore($this->__search1, $b);
