@@ -5,7 +5,6 @@
     //     abstract public function takeTitle();
     //     abstract public function takeContent();
     // }
-
     class BaseArticle extends AbstractFactoryMethod 
     {
         public function makePhpClass($param)

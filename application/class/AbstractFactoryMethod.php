@@ -1,5 +1,5 @@
 <?php
-    abstract class AbstractFactoryMethod extends BaseCrawler 
+    abstract class AbstractFactoryMethod
     {
         abstract public function makePhpClass($param);
     }
