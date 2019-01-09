@@ -18,7 +18,7 @@
              echo '<tr>';
              echo "<td>".$value['Id']."</td>";
              echo "<td>".$value['Title']."</td>";
-             echo "<td><a href=\"../application/action/ShowContent.php?table=".$tableName."&id=".$value['Id']."\">Show Content</a></td>";
+             echo "<td><a href=\"index.php?table=".$tableName."&id=".$value['Id']."\">Show Content</a></td>";
              echo "<td><a href=\"../application/action/DeleteNews.php?table=".$tableName."&id=".$value['Id']."\">Delete</a></td></tr>";
          }
         echo '</table>';
