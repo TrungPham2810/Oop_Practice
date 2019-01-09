@@ -57,7 +57,7 @@ class Db
         } else {
             // var_dump($test->getRow($sql1));
             $_SESSION['linkerror']= $_POST['link'];
-            $_SESSION['existed']=  '<span>Data existed. Please input new url !</span>';
+            $_SESSION['existed']=  '<span class="flash" >Data existed. Please input new url !</span>';
         }       
         }
     }

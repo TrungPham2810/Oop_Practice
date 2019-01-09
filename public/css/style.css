@@ -115,11 +115,11 @@ p {
     font-weight:bold;
     font-size: 17px;
 }
-/* .flash {
-    animation: flash 0.1s alternate ;
-    animation-iteration-count:infinite;
+.flash {
+    animation: flash 0.5s forwards;
+    /* animation-iteration-count:infinite; */
 }
 @-webkit-keyframes flash {
     from {opacity:0}
     to {opacity:1}
-} */
+}
