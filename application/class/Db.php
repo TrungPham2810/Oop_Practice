@@ -29,7 +29,10 @@ class Db
         $c = new $className();
         $c -> url = $a;
         // gán giá trị cho các biến title và content
-        $title = $c -> takeTitle();
+        if ($c->__deleteGarbage() =='') {
+            return ERROR;
+        } else {
+            $title = $c -> takeTitle();
         $content = $c -> takeContent();
         // kiểm tra xem dữ liệu này đã được lưu chưa
         $sql1 = "SELECT Id FROM $table WHERE Title = '$title' ";
@@ -49,14 +52,14 @@ class Db
             }
             // Vì sau vòng lặp các biến $field_list và $value_list sẽ thừa một dấu , nên ta sẽ dùng hàm trim để xóa đi
             $sql = 'INSERT INTO '.$table. '('.trim($field_list, ',').') VALUES (N'.trim($value_list, ',').')';
-    
             mysqli_query($this->__conn, $sql);
-                return '<span>Success</span>';
+            $_SESSION['success']= '<span class="flash">Add data Success</span>';
         } else {
             // var_dump($test->getRow($sql1));
-            return '<span>Dữ liệu đã tồn tại, mời bạn nhập dữ liệu mới</span>';
+            $_SESSION['linkerror']= $_POST['link'];
+            $_SESSION['existed']=  '<span>Data existed. Please input new url !</span>';
         }       
-        
+        }
     }
  
     // Hàm Update edit
