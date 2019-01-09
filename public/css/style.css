@@ -21,6 +21,7 @@ body {
 }
 .link {
     border-collapse:collapse;
+    width: 100%;
 }
 .link tr td {
     padding:5px 20px;
@@ -48,7 +49,7 @@ input[type="text"] {
 input[type="submit"] {
     border: 1px solid #ff006c;
     padding: 5px 8px;
-    border-radius: 6px;
+    border-radius: 10px;
     background: #fff;
     color: #ff006c;
     font-weight: bold;
@@ -69,15 +70,14 @@ input[type="submit"] {
    margin-top:20px;
 }
 .show_data tr td:nth-of-type(1) {
-    width:30px;
+    width: 8%;
     text-align:center;
 }
 .show_data tr td:nth-of-type(2) {
-    width:600px;
-    
+    width: 65%;
 }
 .show_data tr td:nth-of-type(3) {
-    width:110px;
+    width: 20%;
     text-align:center;
 }
 .show_data tr td:nth-of-type(4) {
